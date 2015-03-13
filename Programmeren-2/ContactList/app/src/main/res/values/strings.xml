@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Contact List</string>
+    <string name="temp">Temporary</string>
+    <string name="invalid">Invalid</string>
+    <string name="imageDescription">Contact Image</string>
+    <string name="imageDescriptionCall">Call contact</string>
+
+    <string name="firstName">Voornaam</string>
+    <string name="surName">Achternaam</string>
+    <string name="phoneNumber">Tel. nummer</string>
+    <string name="location">Locatie</string>
+
+</resources>
