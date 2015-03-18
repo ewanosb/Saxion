@@ -23,7 +23,6 @@ public class ContactAdapter extends ArrayAdapter<Contact> {
     private LayoutInflater li;
     private TextView tvName, tvPhoneNumber;
     private ImageView ivContactImage, ivCall;
-    private Contact contact;
 
     public ContactAdapter(Context context, int resource, List<Contact> objects) {
         super(context, resource, objects);
@@ -36,7 +35,7 @@ public class ContactAdapter extends ArrayAdapter<Contact> {
             convertView = li.inflate(R.layout.contact_item, parent, false);
         }
 
-        contact = getItem(position);
+        final Contact contact = getItem(position);
 
         tvName = (TextView) convertView.findViewById(R.id.tvName);
         tvPhoneNumber = (TextView) convertView.findViewById(R.id.tvNumber);
