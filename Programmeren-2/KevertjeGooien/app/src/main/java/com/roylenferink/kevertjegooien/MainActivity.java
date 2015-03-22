@@ -2,9 +2,9 @@ package com.roylenferink.kevertjegooien;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.roylenferink.kevertjegooien.model.Dobbelsteen;
 import com.roylenferink.kevertjegooien.model.Kevertje;
@@ -25,6 +25,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         kevertje = new Kevertje();
+        kevertje.addObserver((Observer) findViewById(R.id.vwKever));
 
         dobbelsteen1 = new Dobbelsteen();
         dobbelsteen2 = new Dobbelsteen();
@@ -50,13 +51,17 @@ public class MainActivity extends Activity {
                 valueDice2 = dobbelsteen2.getNumber();
                 valueDice3 = dobbelsteen3.getNumber();
 
-                if ((valueDice1 == 6 && valueDice2 == 6) ||
-                        (valueDice1 == 6 && valueDice3 == 6) ||
-                        (valueDice2 == 6 && valueDice3 == 6)){
-                    kevertje.addSpriet();
-                }else if((valueDice1 == (valueDice2 - 1) && valueDice2 == (valueDice3 - 1)) ||
-                        (valueDice1 == (valueDice2 + 1) && valueDice2 == (valueDice3 + 1))){
-                    kevertje.addPoot();
+                if (kevertje.getBody() >= 8 && kevertje.getSprieten() >= 2){
+                    Toast.makeText(getApplicationContext(), "Je kever is al compleet!", Toast.LENGTH_LONG).show();
+                    btGooi.setEnabled(false);
+                }else {
+                    if ((valueDice1 == 6 && valueDice2 == 6) ||
+                            (valueDice1 == 6 && valueDice3 == 6) ||
+                            (valueDice2 == 6 && valueDice3 == 6)) {
+                        kevertje.addSpriet();
+                    } else if (valueDice1 == 6 || valueDice2 == 6 || valueDice3 == 6) {
+                        kevertje.addStepToBody();
+                    }
                 }
 
             }

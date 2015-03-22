@@ -1,7 +1,5 @@
 package com.roylenferink.kevertjegooien.model;
 
-import android.util.Log;
-
 import java.util.Observable;
 
 /**
@@ -9,28 +7,32 @@ import java.util.Observable;
  */
 public class Kevertje extends Observable {
 
-    private int poot;
+    private int body;
     private int sprieten;
 
     public Kevertje(){
-        this.poot = 0;
+        this.body = 0;
         this.sprieten = 0;
     }
 
-    public void addPoot(){
-        if (this.poot < 6){
-            this.poot++;
+    public void addStepToBody(){
+        if (this.body < 8){
+            this.body++;
         }
+        setChanged();
+        notifyObservers();
     }
 
     public void addSpriet(){
-        if (this.sprieten < 2){
+        if (this.sprieten < 2 && this.body > 2){
             this.sprieten++;
         }
+        setChanged();
+        notifyObservers();
     }
 
-    public int getPoot(){
-        return this.poot;
+    public int getBody(){
+        return this.body;
     }
 
     public int getSprieten(){
