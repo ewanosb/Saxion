@@ -24,7 +24,7 @@ public class Kevertje extends Observable {
     }
 
     public void addSpriet(){
-        if (this.sprieten < 2 && this.body > 2){
+        if (this.sprieten < 2 && this.body >= 2){
             this.sprieten++;
         }
         setChanged();
