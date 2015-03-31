@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">LenferinkRoy344661</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="temp">Temporary</string>
+    <string name="priority">Prioriteit</string>
+    <string name="read">Gelezen</string>
+    <string name="save">Opslaan</string>
+
+</resources>

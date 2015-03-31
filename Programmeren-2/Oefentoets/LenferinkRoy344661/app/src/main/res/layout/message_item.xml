@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/temp"
+                android:id="@+id/tvSender"
+                android:textSize="20sp"
+                android:textColor="@android:color/black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <view
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                class="nl.saxion.view.Priority"
+                android:id="@+id/prOne"
+                android:visibility="gone" />
+
+            <view
+                class="nl.saxion.view.Priority"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/prTwo"
+                android:focusableInTouchMode="false"
+                android:visibility="gone" />
+
+            <view
+                class="nl.saxion.view.Priority"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/prThree"
+                android:focusableInTouchMode="false"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/temp"
+        android:id="@+id/tvMessage"
+        android:textColor="@android:color/black" />
+</LinearLayout>
